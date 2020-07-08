@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM debian:stable
 
 RUN apt-get update && apt-get install -y \
 apt-utils \
@@ -16,11 +16,10 @@ xfonts-75dpi \
 xfonts-base
 
 # wkhtmltopdf
-ENV WKHTMLTOPDF_VERSION 0.12.5
-ENV WKHTMLTOPDF_DEB wkhtmltox_0.12.5-1.stretch_amd64.deb
+ENV WKHTMLTOPDF_VERSION 0.12.6-1
 
 # install wkhtmltopdf
-RUN wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/$WKHTMLTOPDF_VERSION/$WKHTMLTOPDF_DEB
+RUN wget https://github.com/wkhtmltopdf/packaging/releases/download/${WKHTMLTOPDF_VERSION}/wkhtmltox_${WKHTMLTOPDF_VERSION}.stretch_amd64.deb
 RUN dpkg -i $WKHTMLTOPDF_DEB
 RUN wkhtmltopdf --version
 
