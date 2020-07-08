@@ -20,7 +20,7 @@ ENV WKHTMLTOPDF_VERSION 0.12.6-1
 
 # install wkhtmltopdf
 RUN wget https://github.com/wkhtmltopdf/packaging/releases/download/${WKHTMLTOPDF_VERSION}/wkhtmltox_${WKHTMLTOPDF_VERSION}.stretch_amd64.deb
-RUN dpkg -i $WKHTMLTOPDF_DEB
+RUN dpkg -i wkhtmltox_${WKHTMLTOPDF_VERSION}.stretch_amd64.deb
 RUN wkhtmltopdf --version
 
 # install pandoc
