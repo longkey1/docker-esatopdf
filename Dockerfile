@@ -40,4 +40,8 @@ RUN apt-get -y update && apt-get -y install \
   wget \
   xdg-utils
 
+# install md-to-pdf
 RUN npm i -g md-to-pdf --unsafe-perm=true
+
+# install noto-fonts
+RUN apt-get -y install fonts-noto
