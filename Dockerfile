@@ -1,4 +1,4 @@
-FROM longkey1/node:latest
+FROM longkey1/node:slim
 
 # https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#chrome-headless-doesnt-launch-on-unix
 RUN apt-get -y update && apt-get -y install \
